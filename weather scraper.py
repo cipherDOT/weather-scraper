@@ -17,10 +17,10 @@ browser = webdriver.Chrome(
     chrome_options=chrome_options
 )
 
-# place is an user input
+# place to search is an user input
 place = input('Please enter the place of interest: ')
 
-# url for getting the tim information from Google
+# url for getting the temperature information from Google
 url = f'https://www.google.com/search?q=weather at {place}'
 
 # browser to get the url(without opening a browser due to '--headless' argument)
@@ -35,6 +35,5 @@ try:
 except NoSuchElementException as e:
     print(e)
 
-# Time output
+# Temperature output
 print(f'The temperature in {place.capitalize()} now is {temp.text}°C')
-
